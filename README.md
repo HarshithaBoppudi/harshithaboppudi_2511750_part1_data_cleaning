@@ -12,9 +12,7 @@ A retail company exported order-level sales data from multiple internal systems.
 
 ## 3. Tools Used
 
-- **Excel / openpyxl** — all deliverable workbooks, formatting, conditional fills, and live formulas
-- **Python (pandas)** — bulk text cleaning, date-format parsing, duplicate detection, and rule-based flagging logic that fed into the Excel deliverables
-- **LibreOffice headless recalculation** — used to verify all formulas in `cleaned_orders.xlsx` recalculate with zero errors
+- **Excel ** — all deliverable workbooks, formatting, conditional fills, and live formulas
 
 ## 4. Cleaning Steps Performed
 
@@ -25,7 +23,7 @@ A retail company exported order-level sales data from multiple internal systems.
 5. Cleaned the `discount` field — converted text percentages, flagged negative values and values above the assumed 50% cap.
 6. Added calculated columns: `cleaned_discount`, `calculated_sales`, `calculated_profit`, `profit_margin`, `shipping_delay_days`, `order_month`, `order_year`, and an overall `data_quality_flag` (Clean / Warning / Invalid) — all built as live Excel formulas.
 
-Full details are in [`outputs/cleaning_log.md`](outputs/cleaning_log.md).
+
 
 ## 5. Business Rules Applied
 
@@ -52,7 +50,7 @@ Full details are in [`outputs/cleaning_log.md`](outputs/cleaning_log.md).
 | Sales/profit calculation mismatches | 59 |
 | **Final: Clean / Warning / Invalid** | **756 / 44 / 112** (of 912 records) |
 
-Full detail: [`outputs/data_quality_report.xlsx`](outputs/data_quality_report.xlsx)
+
 
 ## 7. Summary of Final Pivot Reports
 
@@ -81,7 +79,7 @@ All completed-sales pivots exclude Cancelled orders and Failed payments, per the
 - Conflicting duplicate `order_id` records were flagged, not resolved — a business decision is needed on which version is authoritative.
 - Original (reported) `sales`/`profit` values were preserved alongside recalculated ones rather than overwritten, since the source of the mismatch (discount, quantity, or unit price) could not be confirmed.
 
-See [`outputs/cleaning_log.md`](outputs/cleaning_log.md) for the complete list.
+
 
 ## 10. Screenshots
 
